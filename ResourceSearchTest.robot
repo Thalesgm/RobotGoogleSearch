@@ -1,8 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library    String
 
 *** Variables ***
-${URL}  https://www.google.com/
+${URL}  https://www.google.com.br/
 ${BROWSER}  chrome
 ${SEARCH_FIELD}  class=gLFyf.gsfi
 #${SEARCH_BTN}  class=gNO89b
@@ -29,6 +30,7 @@ Check if search returned results
 Click the third result and check if the correct page loads
   ${link_text} =  Get Text    ${THIRD_RESULT}
   #css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > div > cite
+  ${link_text}  Remove String  ${link_text}  ...
   Click Element     ${THIRD_RESULT}
   Page Should Contain    ${link_text}
 
