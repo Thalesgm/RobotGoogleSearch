@@ -8,11 +8,8 @@ ${BROWSER}  chrome
 ${SEARCH_FIELD}  class=gLFyf.gsfi
 #${SEARCH_BTN}  class=gNO89b
 ${RESULT_STATS}  id=result-stats
-${THIRD_RESULT}  css=#rso > div:nth-child(6) > div > div > div > div.yuRUbf > a > h3
-
-#xpath=#//*[@id="rso"]/div[4]/div/div/div[1]
-#/html/body/div[7]/div/div[9]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/div[1]/a
-#rso > div:nth-child(2) > div > div > div > div.yuRUbf
+${THIRD_RESULT}  css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > h3
+${link_text}
 *** Keywords ***
 Open the Browser
   Open Browser  url=${URL}  browser=${BROWSER}
@@ -27,11 +24,12 @@ Check if search returned results
   Element Should Contain    ${RESULT_STATS}    Aproximadamente
   Element Should Contain    ${RESULT_STATS}    resultados
 
-Click the third result and check if the correct page loads
+Click the third result
   ${link_text} =  Get Text    ${THIRD_RESULT}
-  #css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > div > cite
   ${link_text}  Remove String  ${link_text}  ...
   Click Element     ${THIRD_RESULT}
+
+Check if the correct page loads
   Page Should Contain    ${link_text}
 
 Close the Browser
