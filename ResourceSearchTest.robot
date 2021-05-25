@@ -8,7 +8,12 @@ ${BROWSER}  chrome
 ${SEARCH_FIELD}  class=gLFyf.gsfi
 #${SEARCH_BTN}  class=gNO89b
 ${RESULT_STATS}  id=result-stats
-${THIRD_RESULT}  css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > h3
+${THIRD_RESULT}  xpath=//*[@id="rso"]/div[3]/div/div/div/div[1]/a/h3
+
+#css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > h3
+#rso > div:nth-child(5) > div > div > div.yuRUbf > a > h3
+#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a > h3
+
 ${link_text}
 *** Keywords ***
 Open the Browser
