@@ -6,36 +6,32 @@ Library    String
 ${URL}  https://www.google.com.br/
 ${BROWSER}  chrome
 ${SEARCH_FIELD}  class=gLFyf.gsfi
-#${SEARCH_BTN}  class=gNO89b
 ${RESULT_STATS}  id=result-stats
 ${THIRD_RESULT}  xpath=//*[@id="rso"]/div[3]/div/div/div/div[1]/a/h3
+${LINK_TEXT}
+${LINK_URL}
 
-#css=#rso > div:nth-child(2) > div > div > div > div.yuRUbf > a > h3
-#rso > div:nth-child(5) > div > div > div.yuRUbf > a > h3
-#rso > div:nth-child(1) > div > div > div > div > div.yuRUbf > a > h3
-
-${link_text}
 *** Keywords ***
-Open the Browser
+Abrir o navegador
   Open Browser  url=${URL}  browser=${BROWSER}
   Maximize Browser Window
 
-Run a search for "${Search_Text}"
+Realizar uma busca pelas palavras-chave "${Search_Text}"
   Click Element    ${SEARCH_FIELD}
   Input Text    ${SEARCH_FIELD}  ${Search_Text}
   Press Keys   ${SEARCH_FIELD}  ENTER
 
-Check if search returned results
+Checar se a busca retornou resultados
   Element Should Contain    ${RESULT_STATS}    Aproximadamente
   Element Should Contain    ${RESULT_STATS}    resultados
 
-Click the third result
-  ${link_text} =  Get Text    ${THIRD_RESULT}
-  ${link_text}  Remove String  ${link_text}  ...
+Acessar o terceiro resultado
+  ${LINK_TEXT} =  Get Text    ${THIRD_RESULT}
+  ${LINK_TEXT}  Remove String  ${LINK_TEXT}  ...
   Click Element     ${THIRD_RESULT}
 
-Check if the correct page loads
-  Page Should Contain    ${link_text}
+Verificar se é mostrada a página esperada
+  Page Should Contain    ${LINK_TEXT}
 
-Close the Browser
+Fechar o navegador
   Close Browser
