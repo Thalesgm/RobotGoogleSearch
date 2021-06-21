@@ -1,6 +1,8 @@
 # RobotGoogleSearch
  Atividade prática usando RobotFramework
- Esse projeto foi desenvolvido como parte do desafio técnico para o PROCESSO SELETIVO 09/2021 – PROGRAMADOR DE SISTEMAS, ANALISTA DE SISTEMAS JR E DESIGNER GRÁFICO (CADASTRO DE RESERVA)
+ 
+ Esse projeto foi desenvolvido como parte do desafio técnico para o PROCESSO SELETIVO 09/2021 – PROGRAMADOR DE SISTEMAS, ANALISTA DE SISTEMAS JR E DESIGNER GRÁFICO (CADASTRO DE RESERVA) para o Cargo 104 PROGRAMADOR DE SISTEMAS DA INFORMAÇÃO (TESTES)
+
  ## Requerimentos
  - Python https://www.python.org/
  - Robotframework https://robotframework.org/
