@@ -3,7 +3,7 @@
  
  ## Requerimentos
  - Python https://www.python.org/
- - robotframework https://robotframework.org/
+ - Robotframework https://robotframework.org/
  - robotframework-seleniumlibrary https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
  - Chrome Driver https://chromedriver.chromium.org/
  
