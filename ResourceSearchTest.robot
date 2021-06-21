@@ -20,15 +20,15 @@ Abrir o navegador
   Maximize Browser Window
 
 Acessar o "${url}"
-  Go To    ${url}
+  Go To  ${url}
 Realizar uma busca pelas palavras-chave "${Search_Text}"
-  Click Element    ${SEARCH_FIELD}
-  Input Text    ${SEARCH_FIELD}  ${Search_Text}
-  Press Keys   ${SEARCH_FIELD}  ENTER
+  Click Element  ${SEARCH_FIELD}
+  Input Text  ${SEARCH_FIELD}  ${Search_Text}
+  Press Keys  ${SEARCH_FIELD}  ENTER
 
 Checar se a busca retornou resultados
-  Element Should Contain    ${RESULT_STATS}    Aproximadamente
-  Element Should Contain    ${RESULT_STATS}    resultados
+  Element Should Contain  ${RESULT_STATS}    Aproximadamente
+  Element Should Contain  ${RESULT_STATS}    resultados
 
 Acessar o terceiro resultado
   #Wait Until Element Is Visible  ${THIRD_RESULT}
@@ -45,12 +45,14 @@ Acessar o terceiro resultado
 
   Set Test Variable  ${LINK_TEXT}
   Set Test Variable  ${LINK_URL}
-  Click Element     ${THIRD_RESULT}
+  Click Element  ${THIRD_RESULT}
 
 Verificar se é mostrada a página esperada
-  Page Should Contain    ${LINK_TEXT}
+  Page Should Contain  ${LINK_TEXT}
   ${URL_ATUAL} =  Get Location
   Should Contain  ${URL_ATUAL}  ${LINK_URL}
 
+Verificar se a página mostrada contém "${TERM}"
+  Page Should Contain  ${TERM}
 Fechar o navegador
   Close Browser

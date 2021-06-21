@@ -9,4 +9,5 @@ Test Case 01: Realizar Busca no Google
   Checar se a busca retornou resultados
   Acessar o terceiro resultado
   Verificar se é mostrada a página esperada
+  Verificar se a página mostrada contém "Robot Framework"
   Fechar o navegador
